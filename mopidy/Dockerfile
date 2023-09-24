@@ -45,6 +45,7 @@ RUN apk add --no-cache \
 COPY --from=mopidy-iris /root/.local/lib/python3.10/site-packages /usr/lib/python3.10/site-packages/
 COPY --from=mopidy-mpd /root/.local/lib/python3.10/site-packages /usr/lib/python3.10/site-packages/
 COPY --from=mopidy-radionet /root/.local/lib/python3.10/site-packages /usr/lib/python3.10/site-packages/
+COPY --from=mopidy-spotify /root/.local/lib/python3.10/site-packages /usr/lib/python3.10/site-packages/
 
 RUN echo "root ALL=NOPASSWD: /usr/lib/python3.10/site-packages/mopidy_iris/system.sh" >> /etc/sudoers
 
