@@ -21,6 +21,10 @@ FROM build-base AS mopidy-mpd
 RUN pip3 install --no-cache-dir --user Mopidy-MPD==3.3.0 &&\
       ls -al /root/.local/lib/python3.10/site-packages
 
+FROM build-base AS mopidy-spotify
+
+RUN pip3 install --no-cache-dir --user Mopidy-Spotify &&\
+      ls -al /root/.local/lib/python3.10/site-packages
 
 FROM build-base AS mopidy-radionet
 
